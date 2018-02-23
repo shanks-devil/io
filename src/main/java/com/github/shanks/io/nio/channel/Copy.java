@@ -14,6 +14,7 @@ public class Copy {
 
   @Test
   public void copy() throws IOException {
+    long start = System.currentTimeMillis();
     File source = new File("source");
     File target = new File("copy");
     target.createNewFile();
@@ -37,5 +38,7 @@ public class Copy {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    long cost = System.currentTimeMillis() - start;
+    System.out.println("使用：" + cost + "毫秒");
   }
 }
